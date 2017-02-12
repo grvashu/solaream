@@ -33,7 +33,7 @@ function getE(B){
     return 229.2*(0.000075+0.001868*Math.cos(degToRad(B))-0.032077*Math.sin(degToRad(B))-0.014615*Math.cos(degToRad(2.0*B))-0.04089*Math.sin(degToRad(2.0*B)));
 }
 function getSolar_time(lst,longitude,e,local_time){
-    return ((4.0*(lst-(360.0-longitude))+e)/60)+local_time;
+    return ((4.0*(lst-longitude)+e)/60)+local_time;
 }
 function getOmega(solar_time){
     return (solar_time-12.0)*15.0;

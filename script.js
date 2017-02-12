@@ -101,6 +101,27 @@ function getBeta(){
 function getGamma(){
     return Number(document.getElementById('gamma').value);
 }
+function getTheta_z(phi,delta,omega){
+    var t1=Math.cos(degToRad(phi))*Math.cos(degToRad(delta))*Math.cos(degToRad(omega));
+    var t2=Math.sin(degToRad(phi))*Math.sin(degToRad(delta));
+    return radToDeg(Math.acos(t1+t2));
+}
+function getRb(theta,theta_z){
+    return Math.cos(degToRad(theta))/Math.cos(degToRad(theta_z));
+}
+function getGbt(gb,rb){
+    return gb*rb;
+}
+function getGamma_s(omega,theta_z,phi,delta){
+    var t1=Math.cos(degToRad(theta_z))*Math.sin(degToRad(phi))-Math.sin(degToRad(delta));
+    var t2=Math.sin(degToRad(theta_z))*Math.cos(degToRad(phi));
+    var t3=Math.abs(radToDeg(Math.acos(t1/t2)));
+    var t4=omega/Math.abs(omega);
+    return t4*t3;
+}
+function getAlpha(theta_z){
+    return 90-theta_z;
+}
 function setup(){
     // Input
     var latitude=getLatitude();
@@ -143,5 +164,20 @@ function setup(){
     var I0=getI0(GSC,n,delta,phi,omega);
     document.getElementById('I0').value=I0.toFixed(2);
 
+    var theta_z=getTheta_z(phi,delta,omega);
+    document.getElementById('theta_z').value=theta_z.toFixed(2);
+
+    var rb=getRb(theta,theta_z);
+    document.getElementById('rb').value=rb.toFixed(2);
+
+    var gb=I0;
+    var gbt=getGbt(gb,rb);
+    document.getElementById('gbt').value=gbt.toFixed(2);
+
+    var alpha=getAlpha(theta_z);
+    document.getElementById('alpha').value=alpha.toFixed(2);
+
+    var gamma_s=getGamma_s(omega,theta_z,phi,delta);
+    document.getElementById('gamma_s').value=gamma_s.toFixed(2);
     //createTable(latitude,longitude,lst,beta,gamma);
 }

@@ -10,7 +10,7 @@
     <hr>
     <table style="width:95vw;">
         <!--INPUT-->
-        <tr><td style="width:70vw;">Latitude</td><td style="width:30vw;"><input id="latitude" type="number" step="0.01" value=23.16> degrees</td></tr>
+        <tr><td style="width:70vw;">Latitude</td><td style="width:30vw;"><input id="latitude" type="number" step="0.01" value=23.16> &deg;</td></tr>
         <tr><td>Longitude</td><td><input id="longitude" type="number" step="0.01" value=72.66>
             <select id="longitudeDirection">
                 <option value="W">&deg;W</option>
@@ -23,20 +23,27 @@
             </select></td></tr>
         <tr><td>n: Day of Year</td><td><input id="n" type="number" step="1" value=34></td></tr>
         <tr><td>Local Time</td><td><input id="local_time" type="number" step="0.5" value=10.5> hours</td></tr>
-        <tr><td>&beta;: Slope(Surface tilt angle from the horizontal)</abbr></td><td><input id="beta" type="number" step="0.01" value=30> degrees</td></tr>
-        <tr><td>&gamma;: Surface Azimuth Angle (Angle between the normal to the surface from true south)</td><td><input id="gamma" type="number" step="0.01" value=0> degrees</td></tr>
+        <tr><td>&beta;: Slope(Surface tilt angle from the horizontal)</abbr></td><td><input id="beta" type="number" step="0.01" value=30> &deg;</td></tr>
+        <tr><td>&gamma;: Surface Azimuth Angle (Angle between the normal to the surface from true south)</td><td><input id="gamma" type="number" step="0.01" value=0> &deg;</td></tr>
 
         <!--OUTPUT-->
         <!-- <tr><td>B</td><td><input id="B" type="number" step="0.01" disabled="disabled"></td></tr> -->
         <tr><td>E: Longitude Correction</td><td><input id="e" type="number" step="0.01" disabled="disabled"> minutes</td></tr>
         <tr><td>Solar Time</td><td><input id="solar_time" type="number" step="0.01" disabled="disabled"> hours</td></tr>
-        <tr><td>&delta;: Declination Angle (Angular position of sun at solar noon)</td><td><input id="delta" type="number" step="0.01" disabled="disabled"> degrees</td></tr>
-        <tr><td>&theta;: Angle of Incidence (Angle Between Sun Ray and Surface Normal)</td><td><input id="theta" type="number" step="0.01" disabled="disabled"> degrees</td></tr>
-        <tr><td>&phi;: Latitude Angle</td><td><input id="phi" type="number" step="0.01" disabled="disabled"> degrees</td></tr>
-        <tr><td>&omega;: Hour Angle (Angle through which the earth would turn to bring the meridian of the point directly under the sun)</td><td><input id="omega" type="number" step="0.01" disabled="disabled"> degrees</td></tr>
-        <tr><td>&omega;<sub>s</sub>: Sunset Angle</td><td><input id="omega_s" type="number" step="0.01" disabled="disabled"> degrees</td></tr>
+        <tr><td>&delta;: Declination Angle (Angular position of sun at solar noon)</td><td><input id="delta" type="number" step="0.01" disabled="disabled"> &deg;</td></tr>
+        <tr><td>&theta;: Angle of Incidence (Angle Between Sun Ray and Surface Normal)</td><td><input id="theta" type="number" step="0.01" disabled="disabled"> &deg;</td></tr>
+        <tr><td>&phi;: Latitude Angle</td><td><input id="phi" type="number" step="0.01" disabled="disabled"> &deg;</td></tr>
+        <tr><td>&omega;: Hour Angle (Angle through which the earth would turn to bring the meridian of the point directly under the sun)</td><td><input id="omega" type="number" step="0.01" disabled="disabled"> &deg;</td></tr>
+        <tr><td>&omega;<sub>s</sub>: Sunset Angle</td><td><input id="omega_s" type="number" step="0.01" disabled="disabled"> &deg;</td></tr>
         <tr><td>H<sub>0</sub>: Global Average Radiation on a Horizontal Surface</td><td><input id="H0" type="number" step="0.01" disabled="disabled"> kJ/m<sup>2</sup> per day</td></tr>
-        <tr><td>I<sub>0</sub>: Monthly Average Radiation on a Horizontal Surface</td><td><input id="I0" type="number" step="0.01" disabled="disabled"> kW-h/m<sup>2</sup></td></tr>
+        <tr><td>I<sub>0</sub>: Monthly Average Radiation on a Horizontal Surface</td><td><input id="I0" type="number" step="0.01" disabled="disabled"> kWh/m<sup>2</sup></td></tr>
+
+        <!--New Parameters-->
+        <tr><td>R<sub>b</sub>: Ratio of beam radiation on the tilted surface to that on a horizontal surface at any time</td><td><input id="rb" type="number" step="0.01" disabled="disabled"></td></tr>
+        <tr><td>G<sub>bt</sub>: Radiation on Tilted Surface</td><td><input id="gbt" type="number" step="0.01" disabled="disabled"> kWh/m<sup>2</sup></td></tr>
+        <tr><td>&theta;<sub>z</sub>: Angle of incidence of beam radiation on a horizontal surface</td><td><input id="theta_z" type="number" step="0.01" disabled="disabled"> &deg;</td></tr>
+        <tr><td>&gamma;<sub>s</sub>: Angular displacement from south of the projection of beam radiation on the horizontal plane</td><td><input id="gamma_s" type="number" step="0.01" disabled="disabled"> &deg;</td></tr>
+        <tr><td>&alpha;: Solar Altitude Angle</td><td><input id="alpha" type="number" step="0.01" disabled="disabled"> &deg;</td></tr>
     </table>
     <button onclick="setup()">Calculate</button>
     <table id="sun-table">

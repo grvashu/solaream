@@ -72,8 +72,7 @@ function getLatitude(){
     return Number(document.getElementById('latitude').value);
 }
 function getLongitude(){
-    var direction=document.getElementById('direction').value;
-    
+    var direction=document.getElementById('longitudeDirection').value;
     if(direction=='E'){
         return 360.0-Number(document.getElementById('longitude').value);
     }
@@ -82,7 +81,13 @@ function getLongitude(){
     }
 }
 function getLst(){
-    return 360.0-Number(document.getElementById('lst').value);
+    var direction=document.getElementById('lstDirection').value;
+    if(direction=='E'){
+        return 360.0-Number(document.getElementById('lst').value);
+    }
+    else{
+        return Number(document.getElementById('lst').value);
+    }
 }
 function getN(){
     return Number(document.getElementById('n').value);

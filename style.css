@@ -1,4 +1,11 @@
-table {
+h1{
+    margin-bottom: 0px;
+}
+body{
+    max-width:800px;
+    margin:0 auto;
+}
+table{
     font-family: serif;
     border-collapse: collapse;
     width: 100%;
@@ -16,6 +23,9 @@ tr:nth-child(odd) {
 td{
     padding:10px;
 }
+#in tr td{
+    text-align: left;
+}
 button {
     background-color: #6752d4;
     border: none;
@@ -27,16 +37,16 @@ button {
     font-size: 14px;
     margin: 10px;
     cursor: pointer;
-    border-radius: 2px;
+    border-radius: 0px;
 }
-input[type="number"]{
+/*input[type="number"]{
     border:none;
     font-family:serif;
     font-size:14px;
     background-color:#eeeeee;
     padding:10px;
     width:60px;
-    border-radius:2px;
+    border-radius:0px;
     text-align: center;
 }
 input[type=number]::-webkit-inner-spin-button,
@@ -51,15 +61,18 @@ select{
     background-color: #eeeeee;
     padding: 10px;
     width: 45px;
-    border-radius: 2px;
+    border-radius: 0px;
     text-align: center;
     height: 37px;
     -webkit-appearance: none;
-}
+    -moz-appearance: none;
+    appearance: none;
+}*/
 hr{
     border-top:1px solid grey;
     border-bottom: none;
 }
 footer{
+    text-align: center;
     padding-top:20px;
 }

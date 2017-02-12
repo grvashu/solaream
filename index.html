@@ -10,39 +10,27 @@
     <center><h1>SolarEAM: Solar Energy Apparatus Manager</h1></center>
     <center><p>Version 1.1 Development Preview | Submit issues <a href="mailto:grv@mathscapes.xyz?Subject=SolarEAM%20Issue">here</a></p></center>
 
-    <table>
+    <table id="in">
         <!--INPUT-->
-        <tr>
-            <td>Latitude</td>
-            <td>Longitude</td>
-            <td><abbr title="Standard Meridian of Local">LST</abbr></td>
-            <td><abbr title="Day of Year">n</abbr></td>
-            <td>Local Time</td>
-            <td><abbr title="Slope(Surface tilt angle from the horizontal)">&beta;</abbr></td>
-            <td><abbr title="Surface Azimuth Angle (Angle between the normal to the surface from true south)">&gamma;</abbr></td>
-        </tr>
-        <tr>
-            <td><input id="latitude" type="number" step="0.01" value=23.16></td>
-            <td><input id="longitude" type="number" step="0.01" value=72.66>
-                <select id="longitudeDirection">
-                    <option value="W">&deg;W</option>
-                    <option value="E">&deg;E</option>
-                </select>
-            </td>
-            <td><input id="lst" type="number" step="0.01" value=82.5>
-                <select id="lstDirection">
-                    <option value="W">&deg;W</option>
-                    <option value="E">&deg;E</option>
-                </select>
-            </td>
-            <td><input id="n" type="number" step="1" value=34></td>
-            <td><input id="local_time" type="number" step="0.5" value=10.5></td>
-            <td><input id="beta" type="number" step="0.01" value=30></td>
-            <td><input id="gamma" type="number" step="0.01" value=0></td>
-        </tr>
+        <tr><td>Latitude</td><td><input id="latitude" type="number" step="0.01" value=23.16> &deg;</td></tr>
+               <tr><td>Longitude</td><td><input id="longitude" type="number" step="0.01" value=72.66>
+                   <select id="longitudeDirection">
+                       <option value="W">&deg;W</option>
+                       <option value="E">&deg;E</option>
+                   </select></td></tr>
+               <tr><td>Standard Meridian of Local</td><td><input id="lst" type="number" step="0.01" value=82.5>
+                   <select id="lstDirection">
+                       <option value="W">&deg;W</option>
+                       <option value="E">&deg;E</option>
+                   </select></td></tr>
+               <tr><td>n: Day of Year</td><td><input id="n" type="number" step="1" value=34></td></tr>
+               <tr><td>Local Time</td><td><input id="local_time" type="number" step="0.5" value=10.5> hours</td></tr>
+               <tr><td>&beta;: Slope(Surface tilt angle from the horizontal)</abbr></td><td><input id="beta" type="number" step="0.01" value=30> &deg;</td></tr>
+               <tr><td>&gamma;: Surface Azimuth Angle (Angle between the normal to the surface from true south)</td><td><input id="gamma" type="number" step="0.01" value=0> &deg;</td></tr>
+
     </table>
 <center><button onclick="setup()">Calculate</button></center>
-    <table>
+    <table id="out">
         <!--OUTPUT-->
         <!-- <tr><td>B</td><td><input id="B" type="number" step="0.01" disabled="disabled"></td></tr> -->
         <tr>
@@ -66,7 +54,7 @@
 
         </tr>
     </table><br>
-    <table>
+    <table id="out">
         <!--New Parameters-->
         <tr>
             <td><abbr title="Ratio of beam radiation on the tilted surface to that on a horizontal surface at any time">R<sub>b</sub></abbr></td>
@@ -94,9 +82,7 @@
     </table>
 
     <footer>
-        &copy; 2008-2017 Mathscapes Tech. All Rights Reserved.<br>
-Permission to make digital or hard copies of all or part of the works on this website is strictly prohibited without permission. Copyrights for all the components in this work including owned by MATHSCAPES TECH. must be honored. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. Request permissions from <a href="mailto:grv@Mathscapes.xyz">here</a>.<br>
-    <a href="http://mathscapes.xyz">Return to main website</a>
+        &copy; 2008-2017 Mathscapes Tech. All Rights Reserved. | <a href="http://mathscapes.xyz">Return to main website</a>
     </footer>
 </body>
 </html>
